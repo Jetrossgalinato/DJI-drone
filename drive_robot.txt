@@ -66,7 +66,7 @@ adding a rotational motor
 -double click to add node 
 -select base nodes > rotational motor
 -click add 
--also change the name of the motor to 
+-also change the name of the motor to motor_1 
 
 adding endpoint for the wheel
 -under hingejoint select endpoint
@@ -86,4 +86,8 @@ adding a wheel
 -click add
 -under geometry
 -height = 0.01
-radius = 0.025
+-radius = 0.025
+
+adjusting position of the wheel
+-under solid change rotation = x=0.0478377 y=-0.718405 z=-0.693979 ang=2.78672
+-change translation y = 0.05, z=0.025
