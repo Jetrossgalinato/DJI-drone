@@ -105,3 +105,6 @@ adding appearance for the wheel
 -select shape
 -enter wheel as DEF
 -use wheel on the bounding object
+
+adding physics
+-double click physics
