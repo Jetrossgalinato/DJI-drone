@@ -108,3 +108,6 @@ adding appearance for the wheel
 
 adding physics
 -double click physics
+
+for reusing physics
+-enter "wheel_physics" as DEF
