@@ -14,3 +14,18 @@ Select the floorTileSize field and set its value to 0.25 0.25 instead of 0.5 0.5
 You should see the effect immediately in the 3D view.
 Select the wallHeight field and change its value to 0.05 instead of 0.1. The wall of the arena should now be lower.
 
+Hands-on #3: Double-click on the RectangleArena in the scene tree to close it and select it. 
+Click on the Add button  at the top of the scene tree. 
+In the open dialog box, choose PROTO nodes (Webots Projects) / objects / factory / containers / WoodenBox (Solid). 
+A big box should appear in the middle of the arena. Double-click on it in the scene tree to open its fields.
+
+Change its size to 0.1 0.1 0.1 instead of 0.6 0.6 0.6.
+Change its translation to 0 0 0.05 instead of 0 0 0.3. Alternatively, you may use the blue arrow that appears in the 3D view to adjust its translation.z field.
+Now shift-click and drag the box in the 3D view and move it in some corner of the arena.
+Select the box and press ctrl-C, ctrl-V (Windows, Linux) or ⌘ command-C, ⌘ command-V (macOS) to copy and paste it. 
+Shift-click and drag the new box to move it at some different location. Create a third box this way.
+Move the boxes, so that no box is at the center of the arena. 
+You may also use the blue rotation arrows to rotate the boxes along the vertical axis. 
+This can be done also by shift-click and drag with the right mouse button. 
+Alternatively, you can change the angle of the rotation field of the WoodenBox nodes in the scene tree.
+Once you are satisfied with the result, save the world using the save button.
