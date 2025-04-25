@@ -13,3 +13,9 @@ adding body for the robot
 -click +
 -select base node > shape
 -click add
+
+defining the shape of the robot
+-select geometry under shape
+-double click to choose a shape
+-select cylinder
+-click add
