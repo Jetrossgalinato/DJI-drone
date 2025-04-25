@@ -29,3 +29,8 @@ adding appearance
 -double click to add appearance node
 -select base node > PBR appearance
 -click add 
+
+customizing appearance
+-basecolor r=0 g=0 b=1
+-roughness 1
+-metalness 0
