@@ -20,6 +20,12 @@ defining the shape of the robot
 -select cylinder
 -click add
 
-adding geometry
+adding height and radius of the cylinder
 -height 0.08
--radius 0.045
+-radius 0.
+
+adding appearance
+-under shape select appearance
+-double click to add appearance node
+-select base node > PBR appearance
+-click add 
