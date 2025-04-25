@@ -1,1 +1,4 @@
 learned mouse movements for viewing
+-mouse wheel -> Zoom
+-select object + left click -> Rotation
+-select object + right click -> Translation
