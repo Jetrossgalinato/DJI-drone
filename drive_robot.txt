@@ -78,3 +78,12 @@ adding endpoint for the wheel
 -select base nodes
 -select shape
 -click add
+
+adding a wheel
+-select geometry under shape
+-double click to choose a shape
+-select cylinder
+-click add
+-under geometry
+-height = 0.01
+radius = 0.025
