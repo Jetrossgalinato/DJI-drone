@@ -1,4 +1,4 @@
-Hands on #1:
+*Hands on #1:
 Pause the current simulation by clicking on the Pause button  of the 3D view 
 (see the user interface description to find out the buttons). 
 The simulation is paused if the virtual time counter on the main toolbar is stopped. 
@@ -8,13 +8,13 @@ Name the project directory my_first_simulation instead of the proposed my_projec
 Name the world file my_first_simulation.wbt instead of the proposed empty.wbt.
 Click all the tick boxes, including the "Add a rectangle arena" which is not ticked by default
 
-Hands-on #2: Double-click on the RectangleArena node in the scene tree. This should open the node and display its fields.
+*Hands-on #2: Double-click on the RectangleArena node in the scene tree. This should open the node and display its fields.
 
 Select the floorTileSize field and set its value to 0.25 0.25 instead of 0.5 0.5. 
 You should see the effect immediately in the 3D view.
 Select the wallHeight field and change its value to 0.05 instead of 0.1. The wall of the arena should now be lower.
 
-Hands-on #3: Double-click on the RectangleArena in the scene tree to close it and select it. 
+*Hands-on #3: Double-click on the RectangleArena in the scene tree to close it and select it. 
 Click on the Add button  at the top of the scene tree. 
 In the open dialog box, choose PROTO nodes (Webots Projects) / objects / factory / containers / WoodenBox (Solid). 
 A big box should appear in the middle of the arena. Double-click on it in the scene tree to open its fields.
@@ -29,3 +29,12 @@ You may also use the blue rotation arrows to rotate the boxes along the vertical
 This can be done also by shift-click and drag with the right mouse button. 
 Alternatively, you can change the angle of the rotation field of the WoodenBox nodes in the scene tree.
 Once you are satisfied with the result, save the world using the save button.
+
+*Adding an E-puck Robot
+
+Hands-on #4: Select the last node WoodenBox of the scene tree view. 
+Click on the Add button  at the top of the scene tree view. 
+In the dialog box, choose PROTO nodes (Webots Projects) / robots / gctronic / e-puck / E-puck (Robot). 
+An e-puck robot should appear in the middle of the arena. 
+Move and rotate this robot, the same way you did it with the boxes. 
+Save the simulation and press the Run real-time button .
