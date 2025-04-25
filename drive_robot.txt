@@ -19,3 +19,7 @@ defining the shape of the robot
 -double click to choose a shape
 -select cylinder
 -click add
+
+adding geometry
+-height 0.08
+-radius 0.045
