@@ -22,3 +22,8 @@ boundingObject(for collision bounds)
 
 adding physics
 -double click physics and then add physics
+
+you can also use pre existing objects
+-click on shape and then tap add
+-choose proto nodes webot projects
+-click on robots, gctronic and then e puck
