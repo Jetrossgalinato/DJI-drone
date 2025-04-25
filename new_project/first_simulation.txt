@@ -1,0 +1,10 @@
+Hands on 1:
+Pause the current simulation by clicking on the Pause button  of the 3D view 
+(see the user interface description to find out the buttons). 
+The simulation is paused if the virtual time counter on the main toolbar is stopped. 
+Create a new project from the File / New / New Project Directory... menu item and follow the instructions:
+
+Name the project directory my_first_simulation instead of the proposed my_project.
+Name the world file my_first_simulation.wbt instead of the proposed empty.wbt.
+Click all the tick boxes, including the "Add a rectangle arena" which is not ticked by default
+
