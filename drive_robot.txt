@@ -48,3 +48,9 @@ setting bounding body
 
 adding physics
 -double click physics
+
+adding a hingejoint
+-click body transform
+-click + to add new node
+-select base node > "hingejoint"
+-click add 
