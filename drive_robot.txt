@@ -37,3 +37,11 @@ customizing appearance
 
 raise the body to floor
 -z 0.0415
+
+setting bounding body
+-select transform
+-enter "body" as DEF
+-select bounding object
+-double click to add node
+-select use > "body"
+-click add 
