@@ -50,7 +50,31 @@ Set its basicTimeStep field to 16. Then save the simulation.
 
 --Creating new controller
 
-Hands-on #7: Create a new C (or any other language) controller called epuck_go_forward 
+*Hands-on #7: Create a new C (or any other language) controller called epuck_go_forward 
 (for C++ and Java call it EPuckGoForward instead) using the File / New / New Robot Controller... menu item. 
 This will create a new epuck_go_forward (or EPuckGoForward) directory in my_first_simulation/controllers. 
 Select the option offering you to open the source file in the text editor.
+
+*Hands on #8: In the scene tree view, select the controller field of the E-puck node, 
+then use the field editor at the bottom of the Scene Tree view: press the Select... 
+button and then select epuck_go_forward in the list. Once the controller is associated with the robot, save the world. 
+Modify the program by getting the motor devices (leftMotor = robot.getDevice('left wheel motor')), 
+and by applying a motor command (leftMotor.setPosition(10.0)):
+
+from controller import Robot, Motor
+
+TIME_STEP = 64
+
+# create the Robot instance.
+robot = Robot()
+
+# get the motor devices
+leftMotor = robot.getDevice('left wheel motor')
+rightMotor = robot.getDevice('right wheel motor')
+# set the target position of the motors
+leftMotor.setPosition(10.0)
+rightMotor.setPosition(10.0)
+
+while robot.step(TIME_STEP) != -1:
+   pass
+Save the modified source code (File / Save Text File), reset and run the simulation.
