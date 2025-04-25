@@ -34,3 +34,6 @@ customizing appearance
 -basecolor r=0 g=0 b=1
 -roughness 1
 -metalness 0
+
+raise the body to floor
+-z 0.0415
