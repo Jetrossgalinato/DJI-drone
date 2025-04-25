@@ -66,4 +66,15 @@ adding a rotational motor
 -double click to add node 
 -select base nodes > rotational motor
 -click add 
--also change the name of the motor to motor_1
+-also change the name of the motor to 
+
+adding endpoint for the wheel
+-under hingejoint select endpoint
+-double click to add node
+-select base nodes > Solid
+-click add
+-select children
+-click + 
+-select base nodes
+-select shape
+-click add
