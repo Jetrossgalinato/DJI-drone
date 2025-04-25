@@ -60,3 +60,9 @@ adding hingejoint parameters
 -double click to add node
 -select base nodes > hingejointparameters
 -click add
+
+adding a rotational motor
+-under hingejoint select devices
+-double click to add node 
+-select base nodes > rotational motor
+-click add 
