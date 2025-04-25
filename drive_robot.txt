@@ -1,0 +1,3 @@
+creating node for the robot
+-click +
+-select base node > robot
