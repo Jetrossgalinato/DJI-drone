@@ -7,3 +7,9 @@ adding transform node
 -click + 
 -select base node > transform 
 -click add
+
+adding body for the robot
+-select children under transform
+-click +
+-select base node > shape
+-click add
