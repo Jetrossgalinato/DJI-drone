@@ -7,3 +7,7 @@ adding new object
 -tap on the arena and then add object
 -you can either choose prototype nodes or base nodes
 
+choosing base nodes
+-choose solid
+-after clicking solid go under it and choose children and then add object
+-choose base nodes and then choose shape
