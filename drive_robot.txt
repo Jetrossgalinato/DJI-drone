@@ -45,3 +45,6 @@ setting bounding body
 -double click to add node
 -select use > "body"
 -click add 
+
+adding physics
+-double click physics
