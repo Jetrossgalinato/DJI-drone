@@ -11,3 +11,7 @@ choosing base nodes
 -choose solid
 -after clicking solid go under it and choose children and then add object
 -choose base nodes and then choose shape
+
+making sphere inside shape
+-under shape double click on geometry and then select a shape, for this example a sphere
+-you can definitely change appearance and size of the sphere
