@@ -91,3 +91,7 @@ adding a wheel
 adjusting position of the wheel
 -under solid change rotation = x=0.0478377 y=-0.718405 z=-0.693979 ang=2.78672
 -change translation y = 0.05, z=0.025
+
+anchoring the wheel
+-under hingejoint > joint parameters > anchor
+y = 0.05, z=0.025
