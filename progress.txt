@@ -19,3 +19,6 @@ making sphere inside shape
 boundingObject
 -you can click the shape and then Define it for reusability
 -then go to boundingObject and double click it then choose USE and click on the shape
+
+adding physics
+-double click physics and then add physics
