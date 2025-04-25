@@ -38,3 +38,9 @@ In the dialog box, choose PROTO nodes (Webots Projects) / robots / gctronic / e-
 An e-puck robot should appear in the middle of the arena. 
 Move and rotate this robot, the same way you did it with the boxes. 
 Save the simulation and press the Run real-time button .
+
+*Hands-on #5: Apply a force to the robot by pressing alt + left-click + drag (use the ⌥ option key on some Mac keyboards). 
+On Linux, you should also press the ctrl key in addition to alt + left-click + drag. 
+It is not possible to apply a force to a WoodenBox node, because by default, they have no mass and are considered as glued on the floor.
+To enable physics on the WoodenBox nodes, you should set their mass field to a certain value (for example 0.2 kg). 
+Once this is done, should be able to apply a force on them as well.
