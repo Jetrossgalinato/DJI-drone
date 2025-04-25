@@ -66,3 +66,4 @@ adding a rotational motor
 -double click to add node 
 -select base nodes > rotational motor
 -click add 
+-also change the name of the motor to motor_1
