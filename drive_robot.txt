@@ -111,3 +111,15 @@ adding physics
 
 for reusing physics
 -enter "wheel_physics" as DEF
+
+in the second wheel it is the same process
+-add other hingejoint
+-add hingejointparameters
+-add motor under hingejointparameters
+-rename the motor to motor_2
+-add node to endpoint to solid
+-under endpoint choose children then reuse "wheel"
+-position for the wheel 
+-translation x=0.0313348 y=-0.04 z=0.025
+-same rotation 
+-add anchor y=-0.04 z=0.025
