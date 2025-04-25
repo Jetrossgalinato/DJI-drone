@@ -1,0 +1,7 @@
+setting up controller
+-from menu bar, click "file" > "New Robot controller"
+-click continue
+-select python
+-click continue
+-select name for the controller
+-click done
