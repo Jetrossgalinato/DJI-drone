@@ -1,3 +1,9 @@
 creating node for the robot
 -click +
 -select base node > robot
+
+adding transform node
+-select children under robot
+-click + 
+-select base node > transform 
+-click add
