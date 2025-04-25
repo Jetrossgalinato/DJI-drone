@@ -15,3 +15,7 @@ choosing base nodes
 making sphere inside shape
 -under shape double click on geometry and then select a shape, for this example a sphere
 -you can definitely change appearance and size of the sphere
+
+boundingObject
+-you can click the shape and then Define it for reusability
+-then go to boundingObject and double click it then choose USE and click on the shape
