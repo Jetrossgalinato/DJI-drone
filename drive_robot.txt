@@ -54,3 +54,9 @@ adding a hingejoint
 -click + to add new node
 -select base node > "hingejoint"
 -click add 
+
+adding hingejoint parameters
+-under hingejoint
+-double click to add node
+-select base nodes > hingejointparameters
+-click add
