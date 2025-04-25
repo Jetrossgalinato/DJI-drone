@@ -2,3 +2,8 @@ learned mouse movements for viewing
 -mouse wheel -> Zoom
 -select object + left click -> Rotation
 -select object + right click -> Translation
+
+adding new object
+-tap on the arena and then add object
+-you can either choose prototype nodes or base nodes
+
