@@ -35,3 +35,12 @@ The result is depicted in this figure.
 
 Hands-on #5: For each Sphere node defining the ball, set its radius field to 0.05 and its subdivision field to 2. 
 Refer to the Reference Manual to understand what the subdivision field stands for.
+
+Hands-on #6: Select the first Sphere node (the child of the Shape) in the scene tree view. 
+The field editor of the scene tree view allows you to enter the DEF string.
+
+Enter BALL_GEOMETRY in this field.
+Select the boundingObject field (containing the second Sphere node), 
+and empty it by right clicking the field in the scene tree and choosing the Delete entry in the context menu that pops up.
+Then, select the boundingObject field and click on the Add button, and select the USE / BALL_GEOMETRY in the dialog box.
+The result is shown in this figure.
