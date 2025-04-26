@@ -19,3 +19,13 @@ In the open dialog box, and choose PROTO nodes (Webots Projects) / objects / flo
 
 Hands-on #3: In the scene tree view select and expand the Floor. 
 Modify the size field and set it to {1, 1} to resize it to 1mx1m.
+
+Hands-on #4: In the scene tree view, select the last node and press the Add button. In the dialog, open the Bases nodes section and select the Solid node. In the scene tree view, expand the Solid node and select its children field. Add a Shape node to it by using the Add button. Select the appearance field of the Shape node and use the Add button to add a PBRAppearance node.
+
+Add a Sphere node as the geometry field of the newly created Shape node.
+Expand the PBRAppearance node and change its metalness field to 0 and its roughness field to 1.
+Add another Sphere node to the boundingObject field of the Solid.
+Finally add a Physics node to the physics field of the Solid.
+By modifying the translation field of the Solid node, place the ball in front of the robot (at {0.2, 0, 0.2} for example).
+Save the simulation.
+The result is depicted in this figure.
