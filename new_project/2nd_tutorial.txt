@@ -44,3 +44,6 @@ Select the boundingObject field (containing the second Sphere node),
 and empty it by right clicking the field in the scene tree and choosing the Delete entry in the context menu that pops up.
 Then, select the boundingObject field and click on the Add button, and select the USE / BALL_GEOMETRY in the dialog box.
 The result is shown in this figure.
+
+Hands-on #7: Create a second ball with the same parameters but using the Shape node 
+(rather than the Sphere node directly) for the DEF-USE mechanism.
