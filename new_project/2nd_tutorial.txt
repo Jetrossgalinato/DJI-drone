@@ -16,3 +16,6 @@ Alternatively, you can right click on it in the 3D view and select Delete in the
 (you can also use the context menu directly in the scene tree view). 
 Select the TexturedBackgroundLight node and click on the Add button. 
 In the open dialog box, and choose PROTO nodes (Webots Projects) / objects / floors / Floor (Solid).
+
+Hands-on #3: In the scene tree view select and expand the Floor. 
+Modify the size field and set it to {1, 1} to resize it to 1mx1m.
