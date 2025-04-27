@@ -26,3 +26,6 @@ Add an ImageTexture node to the baseColorMap field of the PBRAppearance node.
 Add an item to the ImageTexture's url field using the Add button.
 Then set the value of the newly added url item using the "Select" button.
 Follow the path to the location where you saved the texture and select it.
+
+Hands-on #5: View the simulation in wireframe mode by using the View / 
+Wireframe Rendering menu item. Then restore the plain rendering mode: View / Plain Rendering.
