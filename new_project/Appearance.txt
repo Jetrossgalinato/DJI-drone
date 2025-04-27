@@ -1,3 +1,10 @@
 Hands-on #1: From the results of the previous tutorial, 
 create a new simulation called "appearance.wbt" by using 
 the File / Save World As... menu.
+
+Hands-on #2: In the Shape node representing graphically the first wall, add a PBRAppearance node to the appearance field.
+
+Set its baseColor field to blue using the color selector.
+Set its metalness field to 0 using the field editor.
+Finally, set its roughness field to 0.5 using the field editor.
+If the DEF-USE mechanism of the previous tutorial has been correctly implemented, all the walls should turn blue.
