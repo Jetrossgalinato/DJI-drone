@@ -17,3 +17,12 @@ right-click on the field and select "delete" from the menu. The field
 should now say "appearance NULL" instead of "appearance PBRAppearance".
 Double-click on the field again, then navigate to PROTO nodes (Webots Projects), 
 then appearances and select OldSteel (PBRAppearance).
+
+Hands-on #4: add a locally available texture to the ball.
+
+Download the texture available here and save it to your disk.
+Remove the previously added node from the appearance field and add a PBRAppearance node instead.
+Add an ImageTexture node to the baseColorMap field of the PBRAppearance node.
+Add an item to the ImageTexture's url field using the Add button.
+Then set the value of the newly added url item using the "Select" button.
+Follow the path to the location where you saved the texture and select it.
