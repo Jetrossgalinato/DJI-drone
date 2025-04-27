@@ -8,3 +8,12 @@ Set its baseColor field to blue using the color selector.
 Set its metalness field to 0 using the field editor.
 Finally, set its roughness field to 0.5 using the field editor.
 If the DEF-USE mechanism of the previous tutorial has been correctly implemented, all the walls should turn blue.
+
+Hands-on #3: Add a pre-defined PBRAppearance
+
+Select the appearance field and remove the previously added node. 
+To do this, either press the "delete" button on your keyboard or 
+right-click on the field and select "delete" from the menu. The field 
+should now say "appearance NULL" instead of "appearance PBRAppearance".
+Double-click on the field again, then navigate to PROTO nodes (Webots Projects), 
+then appearances and select OldSteel (PBRAppearance).
