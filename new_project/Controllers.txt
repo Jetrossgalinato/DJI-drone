@@ -1,0 +1,4 @@
+Hands on #1: Save the previous world as collision_avoidance.wbt. 
+Create a new C (or any other language) controller called epuck_avoid_collision 
+(for C++ and Java call it EPuckAvoidCollision instead) from the File / New / New Robot Controller...
+ menu item. Modify the controller field of the E-puck node in order to associate it to the new controller.
