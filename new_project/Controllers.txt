@@ -2,3 +2,18 @@ Hands on #1: Save the previous world as collision_avoidance.wbt.
 Create a new C (or any other language) controller called epuck_avoid_collision 
 (for C++ and Java call it EPuckAvoidCollision instead) from the File / New / New Robot Controller...
  menu item. Modify the controller field of the E-puck node in order to associate it to the new controller.
+
+ Hands on #2: At the beginning of the controller file, add the import directives corresponding to the Robot, 
+ the DistanceSensor and the Motor nodes in order to be able to use the corresponding API:
+
+from controller import Robot, DistanceSensor, Motor
+Just after the import statements define a variable that defines the duration of each physics step. 
+This macro will be used as argument to the Robot::step function, and it will also be used to enable the devices. 
+This duration is specified in milliseconds and it must be a multiple of the value in the basicTimeStep field of 
+the WorldInfo node.
+
+TIME_STEP = 64
+The main function is where the controller program starts execution. 
+The arguments passed to the main function are given by the controllerArgs field of the Robot node. 
+The Webots API has to be initialized using the wb_robot_init function and it has to be cleaned up using 
+the wb_robot_cleanup function.
