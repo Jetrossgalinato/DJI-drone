@@ -17,3 +17,18 @@ The main function is where the controller program starts execution.
 The arguments passed to the main function are given by the controllerArgs field of the Robot node. 
 The Webots API has to be initialized using the wb_robot_init function and it has to be cleaned up using 
 the wb_robot_cleanup function.
+
+Hands on #3: In Python there is no main function, the program starts it's execution from the start of the file:
+
+# create the Robot instance.
+robot = Robot()
+# initialize devices
+# feedback loop: step simulation until receiving an exit event
+while robot.step(TIME_STEP) != -1:
+    # read sensors outputs
+    # process behavior
+    # write actuators inputs
+A robot device is referenced by a WbDeviceTag. The WbDeviceTag is retrieved by the wb_robot_get_device function. 
+Then it is used as first argument in every function call concerning this device. 
+A sensor such as the DistanceSensor has to be enabled before use. 
+The second argument of the enable function defines at which rate the sensor will be refreshed.
