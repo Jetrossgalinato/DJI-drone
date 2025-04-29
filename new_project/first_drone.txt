@@ -45,3 +45,7 @@ while robot.step(timestep) != -1:
 for i, motor in enumerate(motors):
     motor.setVelocity(-lift_thrust if i % 2 == 1 else lift_thrust)
 
+--Optional: Print Drone Altitude
+altitude = gps.getValues()[2]
+print(f"Altitude: {altitude:.2f} m")
+
