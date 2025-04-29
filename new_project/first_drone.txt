@@ -26,3 +26,7 @@ for motor in motors:
 
 --Set a Lift Thrust Value
 lift_thrust = 70.0
+
+--Wait 1 Second Before Takeoff
+for _ in range(int(1000 / timestep)):
+    robot.step(timestep)
