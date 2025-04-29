@@ -33,3 +33,15 @@ for _ in range(int(1000 / timestep)):
 
 --Main Loop — Apply Thrust to Fly
 while robot.step(timestep) != -1:
+
+--We apply lift force to each propeller.
+
+--Some propellers are mounted in opposite directions and need negative velocity to spin correctly:
+
+--i % 2 == 1 checks if the motor is at an odd index (1, 3) — those spin the opposite direction.
+
+--This keeps torque balanced, so the drone doesn't spin uncontrollably.
+
+for i, motor in enumerate(motors):
+    motor.setVelocity(-lift_thrust if i % 2 == 1 else lift_thrust)
+
