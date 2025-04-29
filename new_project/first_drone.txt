@@ -11,3 +11,10 @@ timestep = int(robot.getBasicTimeStep())
 gps = robot.getDevice("gps")
 gps.enable(timestep)
 
+--Get and Configure Propeller Motors
+motors = [
+    robot.getDevice("front left propeller"),
+    robot.getDevice("front right propeller"),
+    robot.getDevice("rear left propeller"),
+    robot.getDevice("rear right propeller"),
+]
