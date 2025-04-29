@@ -2,3 +2,7 @@
 
 --this line imports the required webots library
 from controller import Robot, Motor, GPS
+
+--Initialize Robot and Timestep
+robot = Robot()
+timestep = int(robot.getBasicTimeStep())
