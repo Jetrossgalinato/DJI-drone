@@ -23,3 +23,6 @@ motors = [
 for motor in motors:
     motor.setPosition(float('inf'))
     motor.setVelocity(0.0)
+
+--Set a Lift Thrust Value
+lift_thrust = 70.0
