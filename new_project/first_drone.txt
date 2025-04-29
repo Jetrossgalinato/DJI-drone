@@ -1,7 +1,7 @@
 from math import pow
 import sys
 import time
-from controller import Robot, Motor, Keyboard, Camera, InertialUnit, GPS, Compass, Gyro, LED
+from controller import Robot, Motor, Camera, InertialUnit, GPS, Compass, Gyro, LED
 
 # Define constants
 SIGN = lambda x: (x > 0) - (x < 0)
@@ -36,9 +36,6 @@ compass.enable(timestep)
 
 gyro = robot.getDevice("gyro")
 gyro.enable(timestep)
-
-keyboard = robot.getKeyboard()
-keyboard.enable(timestep)
 
 camera_roll_motor = robot.getDevice("camera roll")
 camera_pitch_motor = robot.getDevice("camera pitch")
@@ -79,27 +76,7 @@ while robot.step(timestep) != -1:
     roll_disturbance = 0.0
     pitch_disturbance = 0.0
     yaw_disturbance = 0.0
-    key = keyboard.getKey()
-    while key > 0:
-        if key == Keyboard.UP:
-            pitch_disturbance = -2.0
-        elif key == Keyboard.DOWN:
-            pitch_disturbance = 2.0
-        elif key == Keyboard.RIGHT:
-            yaw_disturbance = -1.3
-        elif key == Keyboard.LEFT:
-            yaw_disturbance = 1.3
-        elif key == (Keyboard.SHIFT + Keyboard.RIGHT):
-            roll_disturbance = -1.0
-        elif key == (Keyboard.SHIFT + Keyboard.LEFT):
-            roll_disturbance = 1.0
-        elif key == (Keyboard.SHIFT + Keyboard.UP):
-            target_altitude += 0.05
-            print(f"target altitude: {target_altitude} [m]")
-        elif key == (Keyboard.SHIFT + Keyboard.DOWN):
-            target_altitude -= 0.05
-            print(f"target altitude: {target_altitude} [m]")
-        key = keyboard.getKey()
+    
 
     # Compute the roll, pitch, yaw, and vertical inputs
     roll_input = k_roll_p * CLAMP(roll, -1.0, 1.0) + roll_velocity + roll_disturbance
