@@ -6,3 +6,8 @@ from controller import Robot, Motor, GPS
 --Initialize Robot and Timestep
 robot = Robot()
 timestep = int(robot.getBasicTimeStep())
+
+--Enable GPS Sensor
+gps = robot.getDevice("gps")
+gps.enable(timestep)
+
