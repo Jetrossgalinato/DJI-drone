@@ -18,3 +18,8 @@ motors = [
     robot.getDevice("rear left propeller"),
     robot.getDevice("rear right propeller"),
 ]
+
+--Fetches the four motors that spin the drone propellers.
+for motor in motors:
+    motor.setPosition(float('inf'))
+    motor.setVelocity(0.0)
