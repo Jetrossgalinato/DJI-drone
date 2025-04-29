@@ -1,1 +1,4 @@
 --The goal is to make the drone fly
+
+--this line imports the required webots library
+from controller import Robot, Motor, GPS
