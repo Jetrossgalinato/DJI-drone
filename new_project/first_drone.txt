@@ -30,3 +30,6 @@ lift_thrust = 70.0
 --Wait 1 Second Before Takeoff
 for _ in range(int(1000 / timestep)):
     robot.step(timestep)
+
+--Main Loop — Apply Thrust to Fly
+while robot.step(timestep) != -1:
