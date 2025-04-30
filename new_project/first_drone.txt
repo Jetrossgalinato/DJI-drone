@@ -51,11 +51,27 @@ for motor in motors:
     motor.setVelocity(1.0)
 
 # Variables
-target_altitude = 1.0  # The target altitude. Can be changed by the user.
+target_altitude = 0.5  # The target altitude. Can be changed by the user.
 
 # Main loop
 while robot.step(timestep) != -1:
     time_elapsed = robot.getTime()
+    
+        # Get the camera image
+    image = camera.getImage()
+    width = camera.getWidth()
+    height = camera.getHeight()
+    
+    # Example: Get color of center pixel
+    x = width // 2
+    y = height // 2
+    r = camera.imageGetRed(image, width, x, y)
+    g = camera.imageGetGreen(image, width, x, y)
+    b = camera.imageGetBlue(image, width, x, y)
+    
+    # Print RGB value of the center pixel
+    print(f"Center pixel RGB: ({r}, {g}, {b})")
+    
 
     # Retrieve robot position using the sensors
     roll, pitch, yaw = imu.getRollPitchYaw()
