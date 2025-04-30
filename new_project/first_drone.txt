@@ -4,7 +4,6 @@ import time
 from controller import Robot, Motor, Camera, InertialUnit, GPS, Compass, Gyro, LED
 
 # Define constants
-SIGN = lambda x: (x > 0) - (x < 0)
 CLAMP = lambda value, low, high: max(low, min(value, high))
 
 # Constants, empirically found
