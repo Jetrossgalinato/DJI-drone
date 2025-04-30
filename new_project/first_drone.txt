@@ -1,23 +1,21 @@
+from controller import Robot, Motor, Camera, InertialUnit, GPS, Gyro, LED
 from math import pow
-
-import time
-from controller import Robot, Motor, Camera, InertialUnit, GPS, Compass, Gyro, LED
 
 # Define constants
 CLAMP = lambda value, low, high: max(low, min(value, high))
 
-# Constants, empirically found
-k_vertical_thrust = 68.5  # with this thrust, the drone lifts.
-k_vertical_offset = 0.6   # Vertical offset where the robot actually targets to stabilize itself.
-k_vertical_p = 3.0        # P constant of the vertical PID.
-k_roll_p = 50.0           # P constant of the roll PID.
-k_pitch_p = 30.0          # P constant of the pitch PID.
+# Constants for stabilization
+k_vertical_thrust = 68.5
+k_vertical_offset = 0.6
+k_vertical_p = 3.0
+k_roll_p = 50.0
+k_pitch_p = 30.0
 
-# Create the robot instance and get timestep
+# Initialize robot and timestep
 robot = Robot()
 timestep = int(robot.getBasicTimeStep())
 
-# Get and enable devices
+# Enable devices
 camera = robot.getDevice("camera")
 camera.enable(timestep)
 
@@ -30,86 +28,70 @@ imu.enable(timestep)
 gps = robot.getDevice("gps")
 gps.enable(timestep)
 
-compass = robot.getDevice("compass")
-compass.enable(timestep)
-
 gyro = robot.getDevice("gyro")
 gyro.enable(timestep)
 
 camera_roll_motor = robot.getDevice("camera roll")
 camera_pitch_motor = robot.getDevice("camera pitch")
 
-# Motors for propellers
-front_left_motor = robot.getDevice("front left propeller")
-front_right_motor = robot.getDevice("front right propeller")
-rear_left_motor = robot.getDevice("rear left propeller")
-rear_right_motor = robot.getDevice("rear right propeller")
+# Initialize propeller motors
+motors = [
+    robot.getDevice("front left propeller"),
+    robot.getDevice("front right propeller"),
+    robot.getDevice("rear left propeller"),
+    robot.getDevice("rear right propeller")
+]
 
-motors = [front_left_motor, front_right_motor, rear_left_motor, rear_right_motor]
 for motor in motors:
     motor.setPosition(float('inf'))
     motor.setVelocity(1.0)
 
-# Variables
-target_altitude = 0.5  # The target altitude. Can be changed by the user.
+# Target altitude
+target_altitude = 0.5
 
-# Main loop
+# Main control loop
 while robot.step(timestep) != -1:
     time_elapsed = robot.getTime()
-    
-        # Get the camera image
-    image = camera.getImage()
-    width = camera.getWidth()
-    height = camera.getHeight()
-    
-    # Example: Get color of center pixel
-    x = width // 2
-    y = height // 2
-    r = camera.imageGetRed(image, width, x, y)
-    g = camera.imageGetGreen(image, width, x, y)
-    b = camera.imageGetBlue(image, width, x, y)
-    
-    # Print RGB value of the center pixel
-    print(f"Center pixel RGB: ({r}, {g}, {b})")
-    
 
-    # Retrieve robot position using the sensors
-    roll, pitch, yaw = imu.getRollPitchYaw()
+    # Read center pixel color from camera
+    image = camera.getImage()
+    x, y = camera.getWidth() // 2, camera.getHeight() // 2
+    r = camera.imageGetRed(image, camera.getWidth(), x, y)
+    g = camera.imageGetGreen(image, camera.getWidth(), x, y)
+    b = camera.imageGetBlue(image, camera.getWidth(), x, y)
+    print(f"Center pixel RGB: ({r}, {g}, {b})")
+
+    # Sensor readings
+    roll, pitch, _ = imu.getRollPitchYaw()
     altitude = gps.getValues()[2]
     roll_velocity, pitch_velocity, _ = gyro.getValues()
 
-    # Blink the front LEDs alternatively with a 1-second rate
+    # LED blinking
     led_state = int(time_elapsed) % 2
     front_left_led.set(led_state)
     front_right_led.set(1 - led_state)
 
-    # Stabilize the camera by actuating the camera motors according to the gyro feedback
+    # Stabilize camera
     camera_roll_motor.setPosition(-0.115 * roll_velocity)
     camera_pitch_motor.setPosition(-0.1 * pitch_velocity)
 
-    # Get the keyboard input
-    roll_disturbance = 0.0
-    pitch_disturbance = 0.0
-    yaw_disturbance = 0.0
-    
+    # PID control inputs
+    roll_input = k_roll_p * CLAMP(roll, -1.0, 1.0) + roll_velocity
+    pitch_input = k_pitch_p * CLAMP(pitch, -1.0, 1.0) + pitch_velocity
+    clamped_diff_alt = CLAMP(target_altitude - altitude + k_vertical_offset, -1.0, 1.0)
+    vertical_input = k_vertical_p * pow(clamped_diff_alt, 3.0)
 
-    # Compute the roll, pitch, yaw, and vertical inputs
-    roll_input = k_roll_p * CLAMP(roll, -1.0, 1.0) + roll_velocity + roll_disturbance
-    pitch_input = k_pitch_p * CLAMP(pitch, -1.0, 1.0) + pitch_velocity + pitch_disturbance
-    yaw_input = yaw_disturbance
-    clamped_difference_altitude = CLAMP(target_altitude - altitude + k_vertical_offset, -1.0, 1.0)
-    vertical_input = k_vertical_p * pow(clamped_difference_altitude, 3.0)
+    # Motor control
+    motor_inputs = [
+        k_vertical_thrust + vertical_input - roll_input + pitch_input,  # Front left
+        k_vertical_thrust + vertical_input + roll_input + pitch_input,  # Front right
+        k_vertical_thrust + vertical_input - roll_input - pitch_input,  # Rear left
+        k_vertical_thrust + vertical_input + roll_input - pitch_input   # Rear right
+    ]
 
-    # Actuate the motors
-    front_left_motor_input = k_vertical_thrust + vertical_input - roll_input + pitch_input - yaw_input
-    front_right_motor_input = k_vertical_thrust + vertical_input + roll_input + pitch_input + yaw_input
-    rear_left_motor_input = k_vertical_thrust + vertical_input - roll_input - pitch_input + yaw_input
-    rear_right_motor_input = k_vertical_thrust + vertical_input + roll_input - pitch_input - yaw_input
-
-    front_left_motor.setVelocity(front_left_motor_input)
-    front_right_motor.setVelocity(-front_right_motor_input)
-    rear_left_motor.setVelocity(-rear_left_motor_input)
-    rear_right_motor.setVelocity(rear_right_motor_input)
+    motors[0].setVelocity(motor_inputs[0])
+    motors[1].setVelocity(-motor_inputs[1])
+    motors[2].setVelocity(-motor_inputs[2])
+    motors[3].setVelocity(motor_inputs[3])
 
 robot.cleanup()
-
