@@ -1,5 +1,5 @@
 from math import pow
-import sys
+
 import time
 from controller import Robot, Motor, Camera, InertialUnit, GPS, Compass, Gyro, LED
 
