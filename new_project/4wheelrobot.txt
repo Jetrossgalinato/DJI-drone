@@ -48,3 +48,8 @@ The last part of the robot modeling is to add the two distance sensors to the ro
 This can be done by adding two DistanceSensor nodes as direct children of the Robot node. 
 Note that the distance sensor acquires its data along the positive x-axis. So, 
 it is necessary to rotate the distance sensor to point their x-axis outside the robot (see the figure).
+
+Hands on #5: Add the two distance sensors as explained above. 
+The distance sensors are at an angle to 0.3 [rad] with the front vector of the robot. 
+Set the graphical and physical shape to a cube (not transformed) having a edge of 0.01 [m]. 
+Set the color to blue. Set the name field according to the labels of this figure.
