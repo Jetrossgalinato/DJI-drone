@@ -6,6 +6,20 @@ The dimension of the box is (0.2, 0.1, 0.05). Add a Physics node to the Robot.
 The figure represents all the nodes defining the robot. So far, only the direct children nodes 
 of the root Robot node has been implemented.
 
+HingeJoint
+The initial position of the wheel is defined by the translation and the rotation fields of the Solid node.
+
+The rotation origin (anchor) and the rotation axis (axis) are defined by the optional HingeJointParameters 
+child of the HingeJoint node.
+
+The radius of the wheel is 0.04 and its thickness (height of the cylinder) is 0.02. 
+For the first wheel, the Solid translation should be defined to (0.05, 0.06, 0) in 
+order to define the relative gap between the body and the wheel, and the rotation to 
+(1 0 0 1.5708) for the wheel cylinder to be correctly oriented. 
+The HingeJointParameters anchor should also be defined to (0.05, 0.06, 0) to define the 
+rotation origin (relatively to the body). Finally, the HingeJointParameters axis should 
+define the rotation axis. In our case it's along the y-axis (so (0, 1, 0)).
+
 Hands on #3: Add a HingeJointParameters node, and enter the field values as described above. 
 Some signs obviously have to be updated for other wheels.
 
