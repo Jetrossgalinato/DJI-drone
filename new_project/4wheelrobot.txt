@@ -5,3 +5,6 @@ Set the color of the Shape to red. Use the Shape to define the boundingObject fi
 The dimension of the box is (0.2, 0.1, 0.05). Add a Physics node to the Robot. 
 The figure represents all the nodes defining the robot. So far, only the direct children nodes 
 of the root Robot node has been implemented.
+
+Hands on #3: Add a HingeJointParameters node, and enter the field values as described above. 
+Some signs obviously have to be updated for other wheels.
