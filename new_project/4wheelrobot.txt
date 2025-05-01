@@ -1,0 +1,7 @@
+Hands on #2: At the end of the scene tree, add a Robot node having four 
+HingeJoint nodes having a Solid node as endPoint. Please refer to this figure. 
+Add a Shape node containing a Box geometry to the Robot node. 
+Set the color of the Shape to red. Use the Shape to define the boundingObject field of the Robot node. 
+The dimension of the box is (0.2, 0.1, 0.05). Add a Physics node to the Robot. 
+The figure represents all the nodes defining the robot. So far, only the direct children nodes 
+of the root Robot node has been implemented.
