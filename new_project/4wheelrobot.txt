@@ -38,3 +38,13 @@ The Cylinder should have a radius of 0.04 and a height of 0.02. Set the color of
 
 Hands on #4: Complete the missing nodes to get the same structure as the one depicted in this figure.
 Don't forget the Physics nodes.
+
+Sensors
+The sensors used on the e-puck of Tutorial 4 are not the same as the ones used in this section. 
+Pay attention to their measuring interval which is between 0 cm = 0 and 10 cm = 1000. 
+Find more information about the lookupTable field here.
+
+The last part of the robot modeling is to add the two distance sensors to the robot. 
+This can be done by adding two DistanceSensor nodes as direct children of the Robot node. 
+Note that the distance sensor acquires its data along the positive x-axis. So, 
+it is necessary to rotate the distance sensor to point their x-axis outside the robot (see the figure).
