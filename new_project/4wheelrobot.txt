@@ -61,31 +61,52 @@ and avoiding obstacles by detecting them by the distance sensors.
 
 from controller import Robot
 
+# Set the basic time step (used for sensor refresh rate and simulation step)
 TIME_STEP = 64
+
+# Create a Robot instance to interact with the simulation
 robot = Robot()
+
+# Initialize distance sensors
 ds = []
-dsNames = ['ds_right', 'ds_left']
+dsNames = ['ds_right', 'ds_left']  # Names of the distance sensors
+
+# Get and enable distance sensors
 for i in range(2):
-    ds.append(robot.getDevice(dsNames[i]))
-    ds[i].enable(TIME_STEP)
+    ds.append(robot.getDevice(dsNames[i]))  # Get sensor by name
+    ds[i].enable(TIME_STEP)  # Enable sensor with the defined time step
+
+# Initialize wheels
 wheels = []
-wheelsNames = ['wheel1', 'wheel2', 'wheel3', 'wheel4']
+wheelsNames = ['wheel1', 'wheel2', 'wheel3', 'wheel4']  # Names of the wheels
+
+# Get wheel motors, set them to velocity control mode
 for i in range(4):
-    wheels.append(robot.getDevice(wheelsNames[i]))
-    wheels[i].setPosition(float('inf'))
-    wheels[i].setVelocity(0.0)
+    wheels.append(robot.getDevice(wheelsNames[i]))  # Get wheel motor by name
+    wheels[i].setPosition(float('inf'))  # Allow infinite rotation (velocity control)
+    wheels[i].setVelocity(0.0)  # Initialize with zero velocity
+
+# Obstacle avoidance counter (used to determine how long to avoid an obstacle)
 avoidObstacleCounter = 0
+
+# Main loop: continue as long as the simulation is running
 while robot.step(TIME_STEP) != -1:
-    leftSpeed = 4.0
-    rightSpeed = 4.0
+    # Default forward speed for both sides
+    leftSpeed = 7.0
+    rightSpeed = 7.0
+
+    # If avoiding obstacle, spin in place
     if avoidObstacleCounter > 0:
-        avoidObstacleCounter -= 1
+        avoidObstacleCounter -= 1  # Decrease counter each step
         leftSpeed = 1.5
-        rightSpeed = -1.5
-    else:  # read sensors
+        rightSpeed = -1.5  # Rotate in place
+    else:
+        # Check sensor values
         for i in range(2):
-            if ds[i].getValue() < 950.0:
-                avoidObstacleCounter = 100
+            if ds[i].getValue() < 950.0:  # If obstacle detected
+                avoidObstacleCounter = 100  # Trigger avoidance behavior
+
+    # Set wheel speeds
     wheels[0].setVelocity(leftSpeed)
     wheels[1].setVelocity(rightSpeed)
     wheels[2].setVelocity(leftSpeed)
