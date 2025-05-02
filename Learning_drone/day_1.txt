@@ -1,0 +1,2 @@
+-cloned the ardupilot repo
+-installed some required packages
