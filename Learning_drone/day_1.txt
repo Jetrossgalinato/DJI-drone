@@ -1,2 +1,4 @@
 -cloned the ardupilot repo
 -installed some required packages
+-enter this in the wsl terminal (for sitl server): 
+./build/sitl/bin/arducopter -I0 --model quad --speedup 1 --defaults Tools/autotest/default_params/copter.parm
