@@ -5,3 +5,8 @@
 
 -enter this on the other wsl terminal (same location with the sitl server):
 mavproxy.py --master tcp:127.0.0.1:5760 --map --console
+
+alternative (using wsl terminal out of vscode, webots and QGroundController): 
+
+open terminal wsl:
+cd /mnt/c/Personal\ Projects/DJI/ArduPilotRepo/ardupilot
