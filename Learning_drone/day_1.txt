@@ -10,6 +10,4 @@ alternative (using wsl terminal out of vscode, webots and QGroundController):
 
 transitioned to ubuntu
 
-download webots
-download necessary files
 open terminal wsl:
