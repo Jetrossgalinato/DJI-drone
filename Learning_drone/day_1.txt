@@ -5,7 +5,7 @@ Type this:
 cd /home/jetrossneri/ardupilot/ardupilot/libraries/SITL/examples/Webots_Python/venv
 source venv/bin/activate
 
--start simulation on webots and then type this on the terminal:
+-start simulation on webots and open QGroundController then type this on the terminal:
 cd .. (until ardupilot folder)
 Tools/autotest/sim_vehicle.py -v ArduCopter -w --model webots-python --add-param-file=libraries/SITL/examples/Webots_Python/params/iris.parm
 
