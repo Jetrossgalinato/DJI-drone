@@ -2,7 +2,8 @@
 -installed some required packages
 -open terminal Ctrl + Alt + T
 Type this:
-
+cd /home/jetrossneri/ardupilot/ardupilot/libraries/SITL/examples/Webots_Python/venv
+source venv/bin/activate
 
 
 transitioned to ubuntu
