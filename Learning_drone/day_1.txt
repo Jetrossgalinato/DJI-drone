@@ -9,5 +9,6 @@ mavproxy.py --master tcp:127.0.0.1:5760 --map --console
 alternative (using wsl terminal out of vscode, webots and QGroundController): 
 
 transitioned to ubuntu
-
+if the failed to start session occurs again enter this:
+open terminal : Ctrl + Alt + F2
 open terminal wsl:
