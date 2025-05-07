@@ -11,4 +11,7 @@ alternative (using wsl terminal out of vscode, webots and QGroundController):
 transitioned to ubuntu
 if the failed to start session occurs again enter this:
 open terminal : Ctrl + Alt + F2
-open terminal wsl:
+
+and then enter this in the terminal:
+sudo apt-get update
+sudo apt-get install --reinstall ubuntu-desktop
