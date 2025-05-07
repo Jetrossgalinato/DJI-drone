@@ -1,12 +1,9 @@
 -cloned the ardupilot repo
 -installed some required packages
--enter this in the wsl terminal (for sitl server): 
-./build/sitl/bin/arducopter -I0 --model quad --speedup 1 --defaults Tools/autotest/default_params/copter.parm
+-open terminal Ctrl + Alt + T
+Type this:
 
--enter this on the other wsl terminal (same location with the sitl server):
-mavproxy.py --master tcp:127.0.0.1:5760 --map --console
 
-alternative (using wsl terminal out of vscode, webots and QGroundController): 
 
 transitioned to ubuntu
 if the failed to start session occurs again enter this:
